@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity">
+
+    <TextView
+        android:id="@+id/prefix_btcEur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="100dp"
+        android:text="BTC/EUR"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/value_btcEur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="100dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/prefix_btcPond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="BTC/GBP"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@id/prefix_btcEur"
+        app:layout_constraintTop_toBottomOf="@id/prefix_btcEur" />
+
+    <TextView
+        android:id="@+id/value_btcPond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@id/value_btcEur"
+        app:layout_constraintTop_toBottomOf="@id/value_btcEur" />
+
+    <TextView
+        android:id="@+id/prefix_btcUsd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="BTC/USD"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@id/prefix_btcPond"
+        app:layout_constraintTop_toBottomOf="@id/prefix_btcPond" />
+
+    <TextView
+        android:id="@+id/value_btcUsd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@id/value_btcPond"
+        app:layout_constraintTop_toBottomOf="@id/value_btcPond" />
+
+    <EditText
+        android:id="@+id/insertReq"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textSize="20sp"
+        android:background="@drawable/background_corner"
+        android:cursorVisible="false"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="@id/prefix_btcUsd"
+        app:layout_constraintTop_toBottomOf="@id/prefix_btcUsd"
+        tools:ignore="TextViewEdits" />
+
+    <TextView
+        android:id="@+id/no_btcCurr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BTC"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/insertReq"
+        app:layout_constraintStart_toStartOf="@+id/insertReq"
+        app:layout_constraintEnd_toEndOf="@+id/insertReq"/>
+
+
+
+    <TextView
+        android:id="@+id/insertReq_currency"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textSize="20sp"
+        android:background="@drawable/background_corner"
+        android:cursorVisible="false"
+        android:gravity="center"
+        android:focusable="false"
+        android:maxLines="1"
+        app:layout_constraintTop_toBottomOf="@id/value_btcUsd"
+        app:layout_constraintEnd_toEndOf="@id/value_btcUsd"
+        tools:ignore="TextViewEdits" />
+
+    <Spinner
+        android:id="@+id/spinner_currency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/insertReq_currency"
+        app:layout_constraintStart_toStartOf="@+id/insertReq_currency"
+        app:layout_constraintEnd_toEndOf="@+id/insertReq_currency"
+        />
+
+    <Button
+        android:id="@+id/button_fiban"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/new_color"
+        android:text="speacial"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/no_btcCurr"
+        app:layout_constraintStart_toStartOf="@+id/no_btcCurr"
+        app:layout_constraintEnd_toEndOf="@+id/no_btcCurr"
+        />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/float_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:maxImageSize="35dp"
+            app:fabCustomSize="60dp"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:src="@android:drawable/arrow_up_float"
+            android:backgroundTint="@color/white"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            />
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
